@@ -70,3 +70,15 @@ exports = function({ query, headers, body}, response) {
 ```
 
 ## :robot: Étape 2 : Réaliser le bot Telegram et l'héberger
+
+1. Créer un Bot télégram en contactant @BotFather
+    - Envoyer /newbot afin de commencer la création du bot.
+    - Donner le nom du bot voulu
+    - Donner le username, il doit être en minuscule et finir par bot
+
+    BotFather vous renvois alors toutes les infos nécessaires afin de communiquer avec notre bot, ce qui nous intéresse ici est le **TOKEN**. Il est sous la forme `987654:AABBCClljjgggffgkk-abc`...
+
+
+    BotFather vous communique également le lien de la conversation pour communiquer avec votre bot, cliquable sur le lien `t.me/NomDuBot`
+
+2. 
