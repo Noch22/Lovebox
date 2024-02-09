@@ -29,7 +29,7 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
     - Créer un nouveau bot en contactant le BotFather et renseigner ses identifiants dans le fichier.
     - Héberger les fichiers du bot sur un service payant ou gratuit, possible d'utiliser [AlwaysData](https://www.alwaysdata.com/fr/) gratuitement.
 
-3. [**Étape 3**](#electric_plug-étape-3--tester-lecode-arduino-sur-lESP8266,-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
+3. [**Étape 3**](#electric_plug-étape-3--tester-le-code-arduino-sur-lESP8266-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
    - Réaliser le montage éléctronique sur breadboard (schémas disponibles).
    - Flasher le code Arduino sur l'ESP8266, ***avec le bon lien vers votre API MongoDB***
    - Tester d'envoyer un message pour voir si il s'affiche !
@@ -149,8 +149,15 @@ ___Bravo, votre bot est hébergé !___ passons dès à présent au nerf de la gu
  ```
 
  5. Téléverser le code sur votre Wemos D1 Mini et tester le bon fonctionnement de celui-ci.
+
+ 6. Connectez le D1 MINI au wifi depuis votre smartphone.
+    - Lors de son initialisation, il cherche à se connecter à un réseau pré enregistré. Si il n'y arrive pas, il se met alors en mode émission. 
+        - Se connecter au réseau "Lovebox", une page devrais s'ouvrir seule, si ce n'est pas le cas se rendre sur **192.168.4.1**.
+        - Cliquer sur "Configure Wifi" et séléctionner votre réseau, y renseigner le mot de passe eet cliquer sur "Save" en bas.
+    
+    **Cette opération est à effectuer à chaque fois que vous déplacez la Lovebox de lieu, si le réseau wifi n'est pas le même évidemment. Si vous la débranchez et rebranchez, elle se reconnectera automatiquement.**
  \
-***Tout fonctionne ? Bravo ! votre LoveBox est bientôt terminée ! Il vous reste plus qu'à imprimer le boitier !***
+*Tout fonctionne ? Bravo ! votre LoveBox est bientôt terminée ! Il vous reste plus qu'à imprimer le boitier !*
 ## :printer: Étape 4 : Impression 3D
 
 Tous les fichiers sont disponible dans le dossier 3DPRINT, téléchargez les et modifiez les à votre guise. 
@@ -173,3 +180,8 @@ Prenez bien en compte la petite taille de la boîte lorsque vous choissisez la t
 Une fois tout soudé, insérez le circuit dans la petite boite, et faite de votre mieux pour fixer chaque élément. J'ai personnellement utilisé de la colle à chaud pour fixer l'écran sur le haut ainsi que le cerveau moteur, l'arduino et la photorésistance. 
 
 ![Photo du montage final](/assets/montage.jpg)
+
+Une fois assemblée, votre boîte est prête ! Offrez de l'amour :heart_eyes_cat: à votre entourage !
+## :heart: Remerciements 
+
+Merci à [julisa99](https://github.com/julisa99/Lovebox), un repository qui m'as beaucoup aidé lors de la création de ma propre Lovebox. Je m'en suis beaucoup inspiré et adapté le code avec le bot telegram ainsi que la base de données.
