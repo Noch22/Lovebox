@@ -29,7 +29,7 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
     - Créer un nouveau bot en contactant le BotFather et renseigner ses identifiants dans le fichier.
     - Héberger les fichiers du bot sur un service payant ou gratuit, possible d'utiliser [AlwaysData](https://www.alwaysdata.com/fr/) gratuitement.
 
-3. **Étape 3** : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
+3. [**Étape 3**](#electric_plug-étape-3--tester-lecode-arduino-sur-lESP8266-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
    - Réaliser le montage éléctronique sur breadboard (schémas disponibles).
    - Flasher le code Arduino sur l'ESP8266, ***avec le bon lien vers votre API MongoDB***
    - Tester d'envoyer un message pour voir si il s'affiche !
@@ -81,4 +81,47 @@ exports = function({ query, headers, body}, response) {
 
     BotFather vous communique également le lien de la conversation pour communiquer avec votre bot, cliquable sur le lien `t.me/NomDuBot`
 
-2. 
+2. Initier le bot Telegram
+    - Télécharger le fichier telegram_bot.js ainsi que le package.json
+        - Installer les packages avec un npm init dans le dossier ou se trouve le fichier telegram_bot.js et le package.json (avoir node js d'installé sur votre machine ainsi que npm)
+    - Modifier le fichier telegram_bot.js avec le token donné par BotFather (line 8)
+        ```javascript
+        const bot = new Bot("VOTRE TOKEN ICI");
+        ```
+    - Modifier le fichier avec le lien vers votre API crée précédemment, le lien renseigné doit-être celui pour ajouter une entrée dans la base de données. (line 31)
+        ```javascript
+        fetch("https://le_lien_de_votre_API_ICI", requestOptions)
+        ```
+    - Entrez votre CHATID ligne 47 et 50 afin de restreindre qui peux envoyer un message ou non via le bot.
+        ```js
+        if(chatId != 'votre chat id ici, pour que vous soyez le seul à pouvoir envoyer un message'){
+
+        ctx.reply("Tu ne peux pas utiliser ce bot !");
+        console.log("refuse " + chatId);
+
+        }else if(chatId == 'votre chat id ici, pour que vous soyez le seul à pouvoir envoyer un message') {
+
+        await ctx.conversation.enter("newmess");
+        console.log("accepted" + chatId);
+        }
+        });
+        ```
+
+
+    - Communiquer avec votre bot télégram et voir si il réponds, si il vous réponds, vérifier dans votre base de données si le message est bien rentré. Si c'est le cas, bravo ! Vous avez fait une bonne partie du travail.
+
+3. Hébérger le bot afin d'y avoir accès 24H/24 et 7J/7.
+
+    Pour cette étape, vous êtes libres d'utiliser le service que vous voulez, si vous disposez déjà d'un hébergeur proposant du nodeJS, c'est possible de passer par celui-ci. Sinon, je vous propose d'utiliser [AlwaysData](https://www.alwaysdata.com/), qui propose une offre gratuite à vie, avec 100mo de stockage. Ce qui est bien assez suffisant pour héberger notre petit fichier et ses dépendances.
+
+Pour ça, rendez-vous sur le [site](https://www.alwaysdata.com/). Créez vous un compte.
+
+1. Déposez vos fichiers grâce au FTP dans le dossier www.
+
+1. Connectez-vous au SSH, lancez un npm init dans le bon dossier
+1. Lancez ensuite un npm start et le bot devrais se lancer
+1. Rendez-vous dans l'onglet Tâches planifiées sur AlwaysData et ajoutez une tâche tous les jours à minuit pour redémarrer le bot automatiquement. La commande est npm start
+
+
+___Bravo, votre bot est hébergé !___ passons dès à présent au nerf de la guerre, l'arduino et l'éléctronique.
+## :electric_plug: Étape 3 : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
