@@ -24,7 +24,7 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
    - Créer une base de données dans le cloud MongoDB.
    - Créer une API pour pouvoir interroger cette base et lui envoyer des données.
 
-2. **Étape 2** : Réaliser le bot Telegram et l'héberger.
+2. [**Étape 2**](#robot-étape-2--réaliser-le-bot-telegram-et-lhéberger) : Réaliser le bot Telegram et l'héberger.
     - Pour cette partie, tout le code est disponible dans le repository.
     - Créer un nouveau bot en contactant le BotFather et renseigner ses identifiants dans le fichier.
     - Héberger les fichiers du bot sur un service payant ou gratuit, possible d'utiliser [AlwaysData](https://www.alwaysdata.com/fr/) gratuitement.
@@ -44,11 +44,29 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
     
 ## :globe_with_meridians: Étape 1 : Créer la base de données MongoDB et l'API
 
-test gkrgker
-gkrgkergreg
-gkrgkerger
+Pour ça, je vous conseille de suivre [le tuto de MongoDB ](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb). 
 
-gkrgkergregger
+Mettez en place 2 HTTPS ENDPOINTS, un pour récupérer les messages et l'autre pour en envoyer. 
 
+**Pour récupérer uniquement le dernier message, utilisez le code suivant dans la partie fonction, en remplaçant par le bon nom de base évidemment :**
 
-gkrgkergreg
+```javascript
+exports = function({ query, headers, body}, response) {
+
+    const doc = context.services
+    .get("mongodb-atlas")
+    .db("Lovebox")
+    .collection("messages")
+    .find({})
+
+    //Récupère uniquement le dernier message entré
+    .sort({$natural: -1}) 
+    .limit(1)
+
+    .toArray();
+    return doc;
+
+};
+```
+
+## :robot: Étape 2 : Réaliser le bot Telegram et l'héberger
