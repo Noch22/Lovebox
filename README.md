@@ -5,7 +5,7 @@ Envie d'envoyer de l'amour à ton partenaire, où simplement quelqu'un que tu ai
 
 
 
-
+![Photo de la lovebox](/assets/cover.jpg)
 ## :shopping_cart: Liste des courses 
  - Wemos D1 Mini
    - [Wemos D1 Mini (cheap, cramé au bout de quelques semaine)](https://fr.aliexpress.com/item/1005006018009983.html?spm=a2g0o.productlist.main.1.710271d3t6g7PT&algo_pvid=52c3a6c4-c3f6-4a17-950a-76c54a03c795&algo_exp_id=52c3a6c4-c3f6-4a17-950a-76c54a03c795-0&pdp_npi=4%40dis%21EUR%2111.72%213.98%21%21%2188.68%21%21%402103854616982543426884123e755b%2112000035516008089%21sea%21FR%212732995892%21&curPageLogUid=zl0K3OJP8Vpz)
