@@ -37,7 +37,7 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
 4. [**Étape 4**](#printer-étape-4--impression-3D) : Imprimer la boite et le coeur en 3D !
    - Pour cette étape, tous les fichiers sont disponibles dans le dossier 3DPRINT, utiliser votre slicer préféré pour slicer les fichiers pour la bonne imprimante ! Il est également possible de les modifier si il ne conviennent pas, ___attention surtout au trou à l'arrière pour brancher le cable de l'ESP8266, il est un peu petit.___
 
-5. [**Étape 5**](#scissors-étape-5--assembler-le-tout-!) : Assembler le tout !
+5. [**Étape 5**](#scissors-étape-5--assembler-le-tout) : Assembler le tout !
     - Et voici le moment de souder tous les composants entre eux, de bien isoler les soudures afin de tout entrer dans le boitier final ! 
     - Penser également à bien fixer le coeur sur le servomoteur, j'ai personnellement utilsé de la pate à fixe afin de pouvoir le retirer si jamais le servo venait à ne plus fonctionner.
 
@@ -169,7 +169,7 @@ Tous les fichiers sont disponible dans le dossier 3DPRINT, téléchargez les et 
 Tout s'est bien passé ? Bravo vous avez votre boitier !
 
 
-## :scissors: Étape 5 : Assembler le tout !
+## :scissors: Étape 5 : Assembler le tout
 
 Il est l'heure de sortir fils, fer à souder et étain !
 
