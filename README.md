@@ -13,7 +13,7 @@ Envie d'envoyer de l'amour à ton partenaire, où simplement quelqu'un que tu ai
  - [Servo Moteurs](https://fr.aliexpress.com/item/1005005247828609.html?spm=a2g0o.order_list.order_list_main.5.47a45e5bRyADyd&gatewayAdapt=glo2fra)
  - [Photorésistance](https://fr.aliexpress.com/item/1005002388823502.html?spm=a2g0o.productlist.main.29.37cbc2577Uvttn&algo_pvid=6a61f0aa-da98-4b46-9889-7f2f25bc02dd&aem_p4p_detail=2023102510213610602311871836040000145130&algo_exp_id=6a61f0aa-da98-4b46-9889-7f2f25bc02dd-14&pdp_npi=4%40dis%21EUR%213.37%212.36%21%21%213.49%21%21%402103854616982544965095038e755b%2112000020473320432%21sea%21FR%212732995892%21&curPageLogUid=exgoV82lYTlB&search_p4p_id=2023102510213610602311871836040000145130_3)
  - [Écran OLED](https://fr.aliexpress.com/item/32957309383.html?spm=a2g0o.order_list.order_list_main.25.47a45e5bRyADyd&gatewayAdapt=glo2fra)
- - [Résistances](https://fr.aliexpress.com/item/1005005798073776.html?spm=a2g0o.order_list.order_list_main.40.47a45e5bRyADyd&gatewayAdapt=glo2fra)
+ - [Résistances 10KΩ](https://fr.aliexpress.com/item/1005005798073776.html?spm=a2g0o.order_list.order_list_main.40.47a45e5bRyADyd&gatewayAdapt=glo2fra)
 
 
 ## :label: Les étapes de création
@@ -29,15 +29,15 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
     - Créer un nouveau bot en contactant le BotFather et renseigner ses identifiants dans le fichier.
     - Héberger les fichiers du bot sur un service payant ou gratuit, possible d'utiliser [AlwaysData](https://www.alwaysdata.com/fr/) gratuitement.
 
-3. [**Étape 3**](#electric_plug-étape-3--tester-le-code-arduino-sur-lESP8266-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
+3. [**Étape 3**](#electric_plug-étape-3--tester-lecode-arduino-sur-lESP8266,-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
    - Réaliser le montage éléctronique sur breadboard (schémas disponibles).
    - Flasher le code Arduino sur l'ESP8266, ***avec le bon lien vers votre API MongoDB***
    - Tester d'envoyer un message pour voir si il s'affiche !
 
-4. **Étape 4** : Imprimer la boite et le coeur en 3D !
+4. [**Étape 4**](#printer-étape-4--impression-3D) : Imprimer la boite et le coeur en 3D !
    - Pour cette étape, tous les fichiers sont disponibles dans le dossier 3DPRINT, utiliser votre slicer préféré pour slicer les fichiers pour la bonne imprimante ! Il est également possible de les modifier si il ne conviennent pas, ___attention surtout au trou à l'arrière pour brancher le cable de l'ESP8266, il est un peu petit.___
 
-5. **Étape 5** : Assembler le tout !
+5. [**Étape 5**](#scissors-étape-5--assembler-le-tout) : Assembler le tout !
     - Et voici le moment de souder tous les composants entre eux, de bien isoler les soudures afin de tout entrer dans le boitier final ! 
     - Penser également à bien fixer le coeur sur le servomoteur, j'ai personnellement utilsé de la pate à fixe afin de pouvoir le retirer si jamais le servo venait à ne plus fonctionner.
 
@@ -125,3 +125,51 @@ Pour ça, rendez-vous sur le [site](https://www.alwaysdata.com/). Créez vous un
 
 ___Bravo, votre bot est hébergé !___ passons dès à présent au nerf de la guerre, l'arduino et l'éléctronique.
 ## :electric_plug: Étape 3 : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
+
+1. Réaliser le montage sur breadboard (schéma de cablage)
+![Schéma de cablage](/assets/schema.jpg)
+
+2. Lorsque le montage est réalisé, télécharger l'IDE Arduino (si pas encore fait).
+
+3. Télécharger le code disponible dans le dossier ARDUINO et l'ouvrir.
+    - Installer toutes les librairies inclues.
+
+4. Personnaliser le code
+ - Modifier le code ligne 129 avec votre lien, créé précédemment pour récupérer le dernier message de la base de données. 
+
+    ```arduino
+     ligne .129   // Adresse URL de la requête
+    String url = "https://le_lien_pour_recupérer_le_dernier_message";
+    ```
+
+ - Changer le nom ligne 46 avec le nom de la personne à qui l'objet est déstiné.
+
+ ```arduino
+   display.ecrire("LoveBox de prénom", 0, 1);
+ ```
+
+ 5. Téléverser le code sur votre Wemos D1 Mini et tester le bon fonctionnement de celui-ci.
+ \
+***Tout fonctionne ? Bravo ! votre LoveBox est bientôt terminée ! Il vous reste plus qu'à imprimer le boitier !***
+## :printer: Étape 4 : Impression 3D
+
+Tous les fichiers sont disponible dans le dossier 3DPRINT, téléchargez les et modifiez les à votre guise. 
+
+**:warning: Attention à bien imprimer le couvercle à la verticale** afin que la charnière à l'intérieur puisse fonctionner correctement.
+
+**:warning:Attention également à la taille du trou pour passer le câble à l'arrière de la box,** celui-ci peut-être trop petit suivant l'épaisseur de votre cable.
+
+Tout s'est bien passé ? Bravo vous avez votre boitier !
+
+
+## :scissors: Étape 5 : Assembler le tout !
+
+Il est l'heure de sortir fils, fer à souder et étain !
+
+Reliez tous vos composants à votre D1 mini, en prenant bien soin d'isoler les câbles avec de la gaine thermorectractable ou du scotch isolant ! 
+
+Prenez bien en compte la petite taille de la boîte lorsque vous choissisez la taille de chaque file, **c'est petit !**
+
+Une fois tout soudé, insérez le circuit dans la petite boite, et faite de votre mieux pour fixer chaque élément. J'ai personnellement utilisé de la colle à chaud pour fixer l'écran sur le haut ainsi que le cerveau moteur, l'arduino et la photorésistance. 
+
+![Photo du montage final](/assets/montage.jpg)
