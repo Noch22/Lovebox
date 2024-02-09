@@ -29,7 +29,7 @@ Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en angl
     - Créer un nouveau bot en contactant le BotFather et renseigner ses identifiants dans le fichier.
     - Héberger les fichiers du bot sur un service payant ou gratuit, possible d'utiliser [AlwaysData](https://www.alwaysdata.com/fr/) gratuitement.
 
-3. [**Étape 3**](#electric_plug-étape-3--tester-lecode-arduino-sur-lESP8266-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
+3. [**Étape 3**](#electric_plug-étape-3--tester-le-code-arduino-sur-lESP8266-avec-le-montage-sur-breadboard) : Tester le code Arduino sur l'ESP8266, avec le montage sur breadboard
    - Réaliser le montage éléctronique sur breadboard (schémas disponibles).
    - Flasher le code Arduino sur l'ESP8266, ***avec le bon lien vers votre API MongoDB***
    - Tester d'envoyer un message pour voir si il s'affiche !
