@@ -18,7 +18,7 @@ Envie d'envoyer de l'amour à ton partenaire, où simplement quelqu'un que tu ai
 
 ## :label: Les étapes de création
 
-1. [**Étape 1**](#globe_with_meridians-étape-1-:-créer-la-base-de-données-mongodb-et-l'api) : Créer la base de données MongoDB et l'API pour envoyer des messages et les récupérer. 
+1. [**Étape 1**](#globe_with_meridians-étape-1--créer-la-base-de-données-mongodb-et-lapi) : Créer la base de données MongoDB et l'API pour envoyer des messages et les récupérer. 
 Je conseille [ce tuto](https://youtu.be/FkD_tf8vkfg?si=MpVTI8Q7_iVIJIDb) en anglais qui explique très bien comment réaliser cette étape : 
 
    - Créer une base de données dans le cloud MongoDB.
